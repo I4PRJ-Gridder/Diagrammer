@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>15</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>315</y>
+      <w>240</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Colorpicker
+--
+*Members:*
++ currentColor : string
+- currentObj : object
+- colorIndicator : object
+- colors[16] : string
+--
+*Eventlisteners:*
+- clickHandle() x 16
+--
+*Methods:*
++ updateColor(color) : void
++ updateCurrentObj(obj) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>90</y>
+      <w>360</w>
+      <h>750</h>
+    </coordinates>
+    <panel_attributes>Grid
+--
+*Constructor:*
++ Grid(ColorPicker cp)
+--
+*Members:*
+- colorPicker : ColorPicker
+- canvas : canvas
+- wrap : object
+- ctx : object
+- canvasPos : object
+- color : string
+- scrollY : int
+- scrollX : int
+- canvasStyleSize : object
+- dragStart : bool
+- dragX : int
+- dragY : int
+- marginX : int
+- marginY : int
+- worldX : int
+- worldY : int
+--
+*Eventlisteners:*
+- clickHandle(e)
+- keydownHandle(e)
+- mousemoveHandle(e)
+- mouseScrollHandle(e)
+- scrollHandle(e)
+- mousedownHandle(e)
+- mouseupHandle(e)
+--
+*Methods:*
++ setScroll(x, y) : void
++ zoom(scale) : void
++ toggleRandom() : bool
++ calcWorldPos(e) : void
++ pan(x,y) : void
++ setPixel(x,y,color) : void
++ sizeCanvas(x,y) : void
++ sizeCanvasEle(x,y) : void
++ addImage(image) : void
++ randomPlace() : void
++ getRandomColor(color) : string color
++ renderImage(image) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>405</y>
+      <w>165</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>555</x>
+      <y>45</y>
+      <w>810</w>
+      <h>810</h>
+    </coordinates>
+    <panel_attributes>Class Gridder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>105</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>canvas
+--
+*Members:*
++ fillStyle
+--
+*Methods:*
++ getContext(string) : object
++ getBoundingClientRect() : object
++ fillStyle() : void
++ fillRect(x,y,w,h) : void
++ drawImage(image,h,w);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>195</y>
+      <w>165</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>600</y>
+      <w>240</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>Apicaller
+--
+*Members:*
+- conn : signalR
+--
+*Methods:*
++ populateGrid(pixelList) : void
++ recPixel(x, y, color) : void
++ sendPixel(x, y, color) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>645</y>
+      <w>165</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+</diagram>
